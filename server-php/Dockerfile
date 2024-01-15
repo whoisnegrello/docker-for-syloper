@@ -18,7 +18,7 @@ FROM php:8.2-apache as base
 RUN docker-php-ext-install pdo pdo_mysql
 COPY ./src /var/www/html
 
-FROM base as development3
+FROM base as development
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 COPY --from=dev-deps app/vendor/ /var/www/html/vendor
 
