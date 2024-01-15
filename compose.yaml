@@ -1,0 +1,29 @@
+services:
+  server-php:
+    build:
+      context: ./server-php
+    ports:
+      - 9000:80
+    networks:
+      - appnet
+  server-node:
+    build:
+      context: ./server-node
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    networks:
+      - appnet
+  app:
+    build:
+      context: ./app
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4000:4000
+    networks:
+      - appnet
+networks:
+  appnet:
+    driver: bridge
