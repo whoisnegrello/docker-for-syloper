@@ -2,6 +2,7 @@ services:
   server-php:
     build:
       context: ./server-php
+      target: development
     ports:
       - 9000:80
     networks:
