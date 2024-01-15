@@ -78,3 +78,6 @@ $RECYCLE.BIN/
 ### Composer ###
 composer.phar
 **/vendor/**
+
+### Docker ###
+README.Docker.md
