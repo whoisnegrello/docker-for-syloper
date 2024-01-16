@@ -19,10 +19,10 @@ services:
   app:
     build:
       context: ./app
-    environment:
-      NODE_ENV: production
+      target: dev
     ports:
       - 4000:4000
+      - 9229:9229
     networks:
       - appnet
 networks:
